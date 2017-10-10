@@ -46,21 +46,57 @@
 /**
  *  querySelectorAll
  */
-var li = document.querySelectorAll('li')
-console.log('li', li);
-var odd = document.querySelectorAll('li:nth-child(odd)');
-var even = document.querySelectorAll('li:nth-child(even)');
-for (let i = 0; i < odd.length; i++) {
-  odd[i].style.backgroundColor = '#f3f3f3';
-}
-for (let i = 0; i < even.length; i++) {
-  even[i].style.backgroundColor = 'teal';
-  even[i].style.color = 'white';
-}
+// var li = document.querySelectorAll('li')
+// console.log('li', li);
+// var odd = document.querySelectorAll('li:nth-child(odd)');
+// var even = document.querySelectorAll('li:nth-child(even)');
+// for (let i = 0; i < odd.length; i++) {
+//   odd[i].style.backgroundColor = '#f3f3f3';
+// }
+// for (let i = 0; i < even.length; i++) {
+//   even[i].style.backgroundColor = 'teal';
+//   even[i].style.color = 'white';
+// }
 
+/**
+ * Dom Traversing parents 
+ */
+var list_group = document.querySelector('ul.list-group');
+var card_body = list_group.parentNode;
+var card_body2 = list_group.parentElement;
 
+/**
+ * Dom Traversing child 
+ */
+var list_item = list_group.childNodes; // it will return all blank space as child (text node)
+var list_item_1 = list_group.childNodes[0];
+var list_item = list_group.children; // so we should use children instead of childNodes
+var list_item_1 = list_group.children[0]; //
+var first_child = list_group.firstChild; //here first childNode return text which actually a empty space
+var first_child = list_group.firstElementChild; // firstElementChild return li
+var last_child = list_group.lastChild;
+var last_child = list_group.lastElementChild;
+/**
+ * Dom Traversing siblings 
+ */
+var next_sib = first_child.nextSibling;
+var next_sib = first_child.nextElementSibling;
+var prev_sib = next_sib.previousSibling;
+var prev_sib = next_sib.previousElementSibling;
 
-
+/**
+ * Creating element in dom
+ */
+ var h1 = document.createElement('h1');
+ h1.className = 'title first-header';
+ h1.setAttribute('class', 'hello world');
+ var text = document.createTextNode('First heading created by js');
+ h1.appendChild(text);
+ var container = document.querySelector('.container');
+ var h2 = document.querySelector('#main-header');
+ container.insertBefore(h1, h2);
+ h1.style.fontSize = '20px';
+ 
 
 
 
