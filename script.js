@@ -87,16 +87,36 @@ var prev_sib = next_sib.previousElementSibling;
 /**
  * Creating element in dom
  */
- var h1 = document.createElement('h1');
- h1.className = 'title first-header';
- h1.setAttribute('class', 'hello world');
- var text = document.createTextNode('First heading created by js');
- h1.appendChild(text);
- var container = document.querySelector('.container');
- var h2 = document.querySelector('#main-header');
- container.insertBefore(h1, h2);
- h1.style.fontSize = '20px';
- 
+var h1 = document.createElement('h1');
+h1.className = 'title first-header';
+h1.setAttribute('class', 'hello world');
+var text = document.createTextNode('First heading created by js');
+h1.appendChild(text);
+var container = document.querySelector('.container');
+var h2 = document.querySelector('#main-header');
+container.insertBefore(h1, h2);
+h1.style.fontSize = '20px';
+
+ /**
+  * Events in js
+  */
+var btn = document.querySelector('#test_btn');
+btn.addEventListener('click', function (e) {
+  console.log('event', e);
+  console.log('event type - ', e.type);
+  console.log('target - ', e.target);
+  console.log('target id - ', e.target.id);
+  console.log('target className - ', e.target.className);
+  console.log('target classList - ', e.target.classList);
+  console.log('clientX - ', e.clientX);
+  console.log('clientY - ', e.clientY);
+  console.log('offsetX - ', e.offsetX);
+  console.log('offsetY - ', e.offsetY);
+  console.log('ctrl key - ', e.ctrlKey);
+  console.log('shift key - ', e.shiftKey);
+  console.log('alt key - ', e.altKey);
+})
+
 
 
 
